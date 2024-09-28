@@ -1,0 +1,55 @@
+/* src/navbar.css */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    padding: 5px 10px; /* Reduce padding for smaller size */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 40px; /* Reduced height */
+  }
+  
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 10px; /* Reduce gap for smaller size */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-links li {
+    display: flex; /* Use flex to ensure items are centered */
+    align-items: center; /* Center items vertically */
+  }
+  
+  .nav-button {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px; /* Reduce padding for smaller size */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    background: none;
+    border: 2px solid transparent; /* Add border for hover effect */
+    cursor: pointer;
+    display: flex; /* Use flex to ensure items are centered */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    width: 80px; /* Ensure buttons have the same width */
+    height: 30px; /* Ensure buttons have the same height */
+    border-radius: 5px; /* Add border radius for rounded corners */
+  }
+  
+  .nav-button:hover {
+    background-color: #555;
+    color: #fff;
+    border: 2px solid #fff; /* Change border color on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+  }
+  
+  .nav-button:active {
+    transform: scale(0.95); /* Slightly shrink button on click */
+  }
