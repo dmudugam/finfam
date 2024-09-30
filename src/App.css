@@ -1,14 +1,18 @@
-/* App.css */
+/* src/App.css */
+
+/* General styles */
 body {
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .styled-table {
-  margin: 60px auto 0; /* Added margin-top to push the table down */
+  width: 100%;
   border-collapse: collapse;
-  width: 80%;
+  margin: 25px 0;
+  font-size: 0.9em;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  animation: fadeIn 1s ease-in-out;
 }
 
 .styled-table thead tr {
@@ -20,44 +24,53 @@ body {
 .styled-table th,
 .styled-table td {
   padding: 12px 15px;
-  border: 1px solid #dddddd;
 }
 
 .styled-table tbody tr {
   border-bottom: 1px solid #dddddd;
-  transition: background-color 0.3s ease;
 }
 
 .styled-table tbody tr:nth-of-type(even) {
   background-color: #f3f3f3;
 }
 
-.styled-table tbody tr:hover {
-  background-color: #f1f1f1;
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
 }
 
-.logout-button {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #009879;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.download-button:hover,
-.logout-button:hover {
-  background-color: #007f63;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+/* Responsive styles */
+@media (max-width: 768px) {
+  .styled-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
   }
-  to {
-    opacity: 1;
+
+  .styled-table th,
+  .styled-table td {
+    padding: 8px 10px;
+  }
+
+  .styled-table thead tr {
+    font-size: 0.9em;
+  }
+
+  .styled-table tbody tr {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  .styled-table th,
+  .styled-table td {
+    padding: 6px 8px;
+  }
+
+  .styled-table thead tr {
+    font-size: 0.8em;
+  }
+
+  .styled-table tbody tr {
+    font-size: 0.7em;
   }
 }

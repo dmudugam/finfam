@@ -1,55 +1,86 @@
-/* src/navbar.css */
+/* src/navbar/navbar.css */
+
 .navbar {
-    position: fixed;
-    top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #009879;
+  padding: 10px 20px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  margin-right: 20px;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand a:hover {
+  color: #f1f1f1;
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  list-style: none; /* Remove default list item markers */
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-item {
+  margin-left: 20px;
+}
+
+.nav-button {
+  color: white;
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #007f63;
+  color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
     width: 100%;
-    background-color: #333;
-    color: white;
-    z-index: 1000;
+  }
+
+  .navbar-menu.is-open {
     display: flex;
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-    padding: 5px 10px; /* Reduce padding for smaller size */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 40px; /* Reduced height */
   }
-  
-  .navbar-links {
-    list-style: none;
-    display: flex;
-    gap: 10px; /* Reduce gap for smaller size */
-    margin: 0;
-    padding: 0;
+
+  .navbar-item {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
   }
-  
-  .navbar-links li {
-    display: flex; /* Use flex to ensure items are centered */
-    align-items: center; /* Center items vertically */
-  }
-  
-  .nav-button {
-    color: white;
-    text-decoration: none;
-    padding: 5px 10px; /* Reduce padding for smaller size */
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-    background: none;
-    border: 2px solid transparent; /* Add border for hover effect */
-    cursor: pointer;
-    display: flex; /* Use flex to ensure items are centered */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
-    width: 80px; /* Ensure buttons have the same width */
-    height: 30px; /* Ensure buttons have the same height */
-    border-radius: 5px; /* Add border radius for rounded corners */
-  }
-  
-  .nav-button:hover {
-    background-color: #555;
-    color: #fff;
-    border: 2px solid #fff; /* Change border color on hover */
-    transform: scale(1.05); /* Slightly enlarge button on hover */
-  }
-  
-  .nav-button:active {
-    transform: scale(0.95); /* Slightly shrink button on click */
-  }
+}
