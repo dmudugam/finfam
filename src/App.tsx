@@ -8,6 +8,7 @@ import NavBar from './pages/navbar/navbar'; // Import the NavBar component
 import ProtectedRoute from './pages/login/ProtectedRoute'; // Import the ProtectedRoute component
 import MakePayment from './pages/makepayment/makePayment'; // Import the MakePayment component
 import { fetchSheetData } from './api/googleSheetsApi';
+import Footer from './components/Footer/footer'; // Import the Footer component
 
 interface Data {
   priority: string;
@@ -172,6 +173,7 @@ const App: React.FC = () => {
         <Route path="/make-payment" element={<ProtectedRoute element={<MakePayment />} />} />
         <Route path="/" element={<Navigate to="/login" />} />
       </Routes>
+      <Footer /> {/* Add the Footer component */}
     </>
   );
 };
