@@ -1,27 +1,32 @@
-// src/googleSheetsApi.ts
-import { gapi } from 'gapi-script';
-import { API_KEY, CLIENT_ID, DISCOVERY_DOCS, SCOPES } from './googleApiConfig';
+// src/api/googleSheetsApi.ts
+const SHEETDB_API_URL = 'https://sheetdb.io/api/v1/xcaj23av1kc35';
 
-export async function fetchSheetData(spreadsheetId: string, range: string) {
-  return new Promise((resolve, reject) => {
-    function initClient() {
-      gapi.client.init({
-        apiKey: API_KEY,
-        clientId: CLIENT_ID,
-        discoveryDocs: DISCOVERY_DOCS,
-        scope: SCOPES,
-      }).then(() => {
-        gapi.client.sheets.spreadsheets.values.get({
-          spreadsheetId,
-          range,
-        }).then((response: any) => {
-          resolve(response.result.values);
-        }, (error: any) => {
-          reject(error);
-        });
-      });
-    }
-
-    gapi.load('client:auth2', initClient);
+export async function fetchSheetData() {
+  const response = await fetch(`${SHEETDB_API_URL}`, {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
   });
+  const data = await response.json();
+  return data;
+}
+
+export async function updateSheetData(last4Digits: string, updatedData: any) {
+  try {
+    const response = await fetch(`${SHEETDB_API_URL}/last_4_digits/${last4Digits}`, {
+      method: 'PATCH',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ data: updatedData }),
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error updating data:', error);
+    throw error;
+  }
 }

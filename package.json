@@ -18,6 +18,7 @@
     "gapi-script": "^1.2.0",
     "googleapis": "^144.0.0",
     "html2canvas": "^1.4.1",
+    "http2": "^3.3.6",
     "jspdf": "^2.5.2",
     "react": "^18.3.1",
     "react-chartjs-2": "^5.2.0",
@@ -57,6 +58,7 @@
     "@babel/preset-react": "^7.24.7",
     "@types/express": "^5.0.0",
     "@types/gapi": "^0.0.47",
+    "@types/gapi.auth2": "^0.0.47",
     "@types/gapi.client": "^1.0.8",
     "@types/react-chartjs-2": "^2.0.2",
     "@types/react-table": "^7.7.20"

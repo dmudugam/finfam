@@ -1,4 +1,4 @@
-// src/login/Login.tsx
+// src/pages/login/Login.tsx
 import React, { useState } from 'react';
 import { useAuth } from './AuthContext';
 import './login.css'; // Import the CSS file
@@ -21,10 +21,27 @@ const Login: React.FC = () => {
     }
   };
 
+  const handleInput = () => {
+    const earthIcon = document.getElementById('earth-icon');
+    if (earthIcon) {
+      earthIcon.classList.add('rotating');
+    }
+  };
+
+  const handleBlur = () => {
+    const earthIcon = document.getElementById('earth-icon');
+    if (earthIcon) {
+      earthIcon.classList.remove('rotating');
+    }
+  };
+
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
         <h2>Login</h2>
+        <div className="earth-icon">
+          <div id="earth-icon" className="svg-icon"></div>
+        </div>
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
@@ -32,6 +49,8 @@ const Login: React.FC = () => {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            onInput={handleInput}
+            onBlur={handleBlur}
             required
           />
         </div>
@@ -42,6 +61,8 @@ const Login: React.FC = () => {
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            onInput={handleInput}
+            onBlur={handleBlur}
             required
           />
         </div>

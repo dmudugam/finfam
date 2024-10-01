@@ -12,6 +12,8 @@ body {
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 0.9em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -28,6 +30,11 @@ body {
 
 .styled-table tbody tr {
   border-bottom: 1px solid #dddddd;
+  transition: transform 0.2s ease-in-out;
+}
+
+.styled-table tbody tr:hover {
+  transform: scale(1.05);
 }
 
 .styled-table tbody tr:nth-of-type(even) {
