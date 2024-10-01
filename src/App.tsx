@@ -108,6 +108,7 @@ const AppContent: React.FC = () => {
         accessor: 'notes',
       },
     ],
+    // eslint-disable-next-line
     [data]
   );
 
