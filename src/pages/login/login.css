@@ -3,11 +3,13 @@ body {
   font-family: Arial, sans-serif;
 }
 .login-container {
+  background-image: url('../../05.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Ensure it covers the full viewport height */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0;
 }
 .login-form {
   background-color: #ffffff;
